@@ -48,6 +48,7 @@ function display_dogs($var){
             echo '<p>'. $dog['Price']. '</p>';
             echo '<p>'. $dog['Description']. '</p>';
             echo '<p>'. $dog['StatusName']. '</p>';
+            echo '<button>Edit Status</button>'; // Add the button here
             echo '</div>';
         }
     } elseif ($var['status']== 'empty') {
