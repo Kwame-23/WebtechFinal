@@ -5,7 +5,7 @@ include( "../settings/connection.php" );
 function get_all_dogs(){
     global $conn;
 
-    $sql = "SELECT d.DogName, d.Breed, d.Price, d.Description, d.ImageURL, s.StatusName
+    $sql = "SELECT d.DogID, d.DogName, d.Breed, d.Price, d.Description, d.ImageURL, s.StatusName
      FROM Dogs as d 
      JOIN AvailabilityStatuses as s ON d.StatusID = s.StatusID;
     ";
@@ -37,6 +37,7 @@ function get_all_dogs(){
 }
 
 $dog_list=get_all_dogs();
+print_r($dog_list);
 
 function display_dogs($var){
     if ($var['status']== 'success'){
@@ -45,10 +46,14 @@ function display_dogs($var){
             echo '<img style="max-width: 100%; height: auto; max-height: 200px;" src="'. $dog['ImageURL']. '" alt="'. $dog['DogName']. '">';
             echo '<p>'. $dog['DogName']. '</p>';
             echo '<p>'. $dog['Breed']. '</p>';
-            echo '<p>'. $dog['Price']. '</p>';
+            echo '<p> ¢'. $dog['Price']. '</p>';
             echo '<p>'. $dog['Description']. '</p>';
             echo '<p>'. $dog['StatusName']. '</p>';
-            echo '<button>Edit Status</button>'; // Add the button here
+            echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
+            echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
+            echo '<input type="hidden" name="new_status" value="2">'; 
+            echo '<button type="submit" name="submit" style="margin-right: 10px;">Reserve</button>';
+            echo '</form>';
             echo '</div>';
         }
     } elseif ($var['status']== 'empty') {
