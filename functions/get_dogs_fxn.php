@@ -37,7 +37,7 @@ function get_all_dogs(){
 }
 
 $dog_list=get_all_dogs();
-print_r($dog_list);
+// print_r($dog_list);
 
 function display_dogs($var){
     if ($var['status']== 'success'){
