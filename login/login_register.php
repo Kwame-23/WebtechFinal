@@ -28,8 +28,8 @@
             <input type="text" id="lname" name="lname" required placeholder="Last Name">
             <select id="role" name="role" required>
                 <option value=" " disabled selected>Select Role</option>
-                <option value="1">Buyer</option>
-                <option value="2">Seller</option>
+                <option value="1">Seller</option>
+                <option value="2">Buyer</option>
             </select>
             <input type="tel" id="contact" name="contact" required placeholder="Contact">
             <input type="email" id="remail" name="remail" required placeholder="person23@mail.com">
