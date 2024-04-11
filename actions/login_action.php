@@ -11,12 +11,12 @@ if (isset($_POST['lsubmit'])){
         exit;
     }
     $sql ="SELECT * FROM Users WHERE email=?";
-    $stmt =$conn->prepare( $sql );  // prepare the query
-    $stmt->bind_param("s", $email);   // bind the parameters
-    $stmt->execute();     // execute the prepared statement
-    $result = $stmt->get_result();      // get the result set from the
+    $stmt =$conn->prepare( $sql );   
+    $stmt->bind_param("s", $email);   
+    $stmt->execute();      
+    $result = $stmt->get_result();       
 
-    if($result->num_rows===0){       // if no match found, display error message
+    if($result->num_rows===0){       
         header("Location: ../login/login_register.php?msg=Unregistered Email");
         echo "Incorrect Email";
         exit;
