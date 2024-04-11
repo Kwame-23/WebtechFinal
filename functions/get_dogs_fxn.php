@@ -1,6 +1,10 @@
 <?php
 
 include( "../settings/connection.php" );
+session_start();
+include( "../settings/core.php" );
+$role_ID = $_SESSION['role_id'];
+
 
 function get_all_dogs(){
     global $conn;
@@ -40,6 +44,8 @@ $dog_list=get_all_dogs();
 // print_r($dog_list);
 
 function display_dogs($var){
+    $role_ID = $_SESSION['role_id'];
+
     if ($var['status']== 'success'){
         foreach($var['data'] as $dog){
             echo '<div style="flex-basis: calc(25% - 20px); text-align:center; overflow: hidden;">';
@@ -50,12 +56,14 @@ function display_dogs($var){
             echo '<p>'. $dog['Description']. '</p>';
             echo '<p>'. $dog['StatusName']. '</p>';
 
-            echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
+            if ($role_ID == 1) {
+                echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
             echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
             echo '<input type="hidden" name="new_status" value="3">'; 
             echo '<button type="submit" name="submit" style="margin-right: 10px;">Reserve</button>';
             echo '</form>';
-
+            }
+            elseif($role_ID==2){
             echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
             echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
             echo '<input type="hidden" name="new_status" value="2">'; 
@@ -72,6 +80,7 @@ function display_dogs($var){
             echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
             echo '<button type="submit" name="submit" style="margin-right: 10px;">Delete</button>';
             echo '</form>';
+            }
             echo '</div>';
         }
     } elseif ($var['status']== 'empty') {

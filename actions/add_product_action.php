@@ -12,7 +12,7 @@ if (isset($_POST['submit'])){
     $category=$_POST['category'];
     $price=$_POST['price'];
     $description=$_POST['description'];
-    $statusID=$_POST['status'];
+    $statusID=1;
     $img= "";
 
     

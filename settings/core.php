@@ -17,3 +17,6 @@ function getUserRole(){
         return null;
     }
 }
+
+
+// print_r(getUserRole());

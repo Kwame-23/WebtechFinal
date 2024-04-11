@@ -1,8 +1,3 @@
-<?php 
-include("../settings/core.php");
-check_login();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

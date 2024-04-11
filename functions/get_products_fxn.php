@@ -1,6 +1,10 @@
 <?php
 
 include( "../settings/connection.php" );
+session_start();
+include( "../settings/core.php" );
+$role_ID = $_SESSION['role_id'];
+
 
 function get_all_products(){
     global $conn;
@@ -40,6 +44,8 @@ $products_list=get_all_products();
 // print_r($products_list);
 
 function display_productss($var){
+    $role_ID = $_SESSION['role_id'];
+
     if ($var['status']== 'success'){
         foreach($var['data'] as $products){
             echo '<div style="flex-basis: calc(25% - 20px); text-align:center;">';
@@ -50,13 +56,15 @@ function display_productss($var){
             echo '<p>'. $products['Description']. '</p>';
             echo '<p>'. $products['StatusName']. '</p>';
     
-            
+            if ($role_ID == 1) {
+
             echo '<form method="GET" action="../actions/edit_product_action.php" style="display: inline;">';
             echo '<input type="hidden" name="id" value="' . $products['ItemID'] . '">';
             echo '<input type="hidden" name="new_status" value="3">'; 
             echo '<button type="submit" name="submit" style="margin-right: 10px;">Reserve</button>';
             echo '</form>';
-
+            }
+            elseif($role_ID==2){
             echo '<form method="GET" action="../actions/edit_product_action.php" style="display: inline;">';
             echo '<input type="hidden" name="id" value="' . $products['ItemID'] . '">';
             echo '<input type="hidden" name="new_status" value="2">'; 
@@ -73,8 +81,9 @@ function display_productss($var){
             echo '<input type="hidden" name="id" value="' . $products['ItemID'] . '">';
             echo '<button type="submit" name="submit" style="margin-right: 10px;">Delete</button>';
             echo '</form>';
-            echo '</div>';
         }
+        echo '</div>';
+    }
     } elseif ($var['status']== 'empty') {
         echo '<p class="no-products-found">No products found.</p>';
     } else {

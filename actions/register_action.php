@@ -3,6 +3,8 @@ session_start();
 
 include ("../settings/connection.php");
 
+// var_dump($_POST);
+
 if(isset($_POST['submitBtn'])){
     $fname=$_POST['fname'];
     $lname=$_POST['lname'];

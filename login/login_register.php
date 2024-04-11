@@ -27,7 +27,7 @@
             <input type="text" id="fname" name="fname" required placeholder="First Name">
             <input type="text" id="lname" name="lname" required placeholder="Last Name">
             <select id="role" name="role" required>
-                <option value="" disabled selected>Select Role</option>
+                <option value=" " disabled selected>Select Role</option>
                 <option value="1">Buyer</option>
                 <option value="2">Seller</option>
             </select>

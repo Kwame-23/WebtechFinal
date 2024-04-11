@@ -30,6 +30,7 @@ if (isset($_POST['lsubmit'])){
         exit;
     }
     $_SESSION['user_id']=$user['user_id'];
+    $_SESSION['role_id']=$user['role_id'];
 
     header("Location: ../views/dashboard.php");
 }
