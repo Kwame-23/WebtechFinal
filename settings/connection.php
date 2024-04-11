@@ -1,7 +1,7 @@
 <?php
 $dbservername="localhost";
 $dbusername="root";
-$dbpassword="";
+$dbpassword="*Kwame23*";
 $database="dogmarket";
 
 $conn= new mysqli($dbservername, $dbusername, $dbpassword, $database);
