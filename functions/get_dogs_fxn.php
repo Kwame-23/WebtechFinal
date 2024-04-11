@@ -56,29 +56,36 @@ function display_dogs($var){
             echo '<p>'. $dog['Description']. '</p>';
             echo '<p>'. $dog['StatusName']. '</p>';
 
-            echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
-            echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
-            echo '<input type="hidden" name="new_status" value="3">'; 
-            echo '<button type="submit" name="submit" style="margin-right: 10px;">Reserve</button>';
-            echo '</form>';
-           
-            echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
-            echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
-            echo '<input type="hidden" name="new_status" value="2">'; 
-            echo '<button type="submit" name="submit" style="margin-right: 10px;">Sold</button>';
-            echo '</form>';
+            switch ($role_ID) {
+                case 1:
+                    echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
+                    echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
+                    echo '<input type="hidden" name="new_status" value="3">'; 
+                    echo '<button type="submit" name="submit" style="margin-right: 10px;">Reserve</button>';
+                    echo '</form>';
+                    break;
+                case 2:
+                    echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
+                    echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
+                    echo '<input type="hidden" name="new_status" value="2">'; 
+                    echo '<button type="submit" name="submit" style="margin-right: 10px;">Sold</button>';
+                    echo '</form>';
 
-            echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
-            echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
-            echo '<input type="hidden" name="new_status" value="1">'; 
-            echo '<button type="submit" name="submit" style="margin-right: 10px;">Available</button>';
-            echo '</form>';
+                    echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
+                    echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
+                    echo '<input type="hidden" name="new_status" value="1">'; 
+                    echo '<button type="submit" name="submit" style="margin-right: 10px;">Available</button>';
+                    echo '</form>';
 
-            echo '<form method="GET" action="../actions/delete_dog_action.php" style="display: inline;">';
-            echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
-            echo '<button type="submit" name="submit" style="margin-right: 10px;">Delete</button>';
-            echo '</form>';
-            
+                    echo '<form method="GET" action="../actions/delete_dog_action.php" style="display: inline;">';
+                    echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
+                    echo '<button type="submit" name="submit" style="margin-right: 10px;">Delete</button>';
+                    echo '</form>';
+                    break;
+                default:
+                    // Handle other roles or unknown roles
+                    break;
+            }
             echo '</div>';
         }
     } elseif ($var['status']== 'empty') {
@@ -87,7 +94,6 @@ function display_dogs($var){
         echo '<p class="error-message">An error occurred: '. $var['message']. '</p>';
     }
 }
-
 $dog_list = get_all_dogs();
 display_dogs($dog_list);
 
