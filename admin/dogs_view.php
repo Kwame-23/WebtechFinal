@@ -126,14 +126,6 @@ check_login();
       <label for="price">Price:</label><br>
       <input type="number" id="price" name="price" min="0" step="0.01" required><br><br>
 
-      <label for="status">Status:</label>
-      <select id="status" name="status" required>
-                <option value="" disabled selected>Availability..:</option>
-                <option value="1">Available</option>
-                <option value="2">Sold</option>
-                <option value="3">Reserved</option>
-            </select><br>
-
       <label for="image">Image:</label>
       <input type="file" id="image" name="image" required><br><br>
       <input type="submit" name="submit" value="Submit">

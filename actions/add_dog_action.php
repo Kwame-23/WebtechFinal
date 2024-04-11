@@ -10,7 +10,7 @@ if (isset($_POST['submit'])){
     $breed=$_POST['breed'];
     $price=$_POST['price'];
     $description=$_POST['description'];
-    $statusID=$_POST['status'];
+    $statusID=1;
     $img= "";
 
     $target_dir= "../dog_uploads/";
