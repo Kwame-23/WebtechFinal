@@ -21,9 +21,11 @@ function getUserRole(){
 function bounce(){
     if(getUserRole() == 1){
         header("Location: ../admin/admin_view.php");
+        exit();
     }
-    if(getUserRole() == 2){
+    else if(getUserRole() == 2){
     header("Location: ../admin/dogs_view.php");
+    exit();
     }
 }
 

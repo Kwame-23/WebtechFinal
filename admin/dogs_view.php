@@ -1,7 +1,7 @@
-<?php 
+ <?php 
 include( "../settings/core.php" );
-bounce()
- ?>
+bounce();
+ ?> 
 
 
 <!DOCTYPE html>
