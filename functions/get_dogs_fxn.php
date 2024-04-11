@@ -56,14 +56,12 @@ function display_dogs($var){
             echo '<p>'. $dog['Description']. '</p>';
             echo '<p>'. $dog['StatusName']. '</p>';
 
-            if ($role_ID == 1) {
             echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
             echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
             echo '<input type="hidden" name="new_status" value="3">'; 
             echo '<button type="submit" name="submit" style="margin-right: 10px;">Reserve</button>';
             echo '</form>';
-            }
-            elseif($role_ID==2){
+           
             echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
             echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
             echo '<input type="hidden" name="new_status" value="2">'; 
@@ -80,7 +78,7 @@ function display_dogs($var){
             echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
             echo '<button type="submit" name="submit" style="margin-right: 10px;">Delete</button>';
             echo '</form>';
-            }
+            
             echo '</div>';
         }
     } elseif ($var['status']== 'empty') {
