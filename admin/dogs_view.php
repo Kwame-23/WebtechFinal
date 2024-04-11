@@ -102,6 +102,8 @@
         </div> -->
         <?php
         include("../functions/get_dogs_fxn.php");
+        display_dogs($dog_list);
+
         ?>
     </div>
 

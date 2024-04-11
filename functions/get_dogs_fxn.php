@@ -57,7 +57,7 @@ function display_dogs($var){
             echo '<p>'. $dog['StatusName']. '</p>';
 
             if ($role_ID == 1) {
-                echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
+            echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
             echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
             echo '<input type="hidden" name="new_status" value="3">'; 
             echo '<button type="submit" name="submit" style="margin-right: 10px;">Reserve</button>';
