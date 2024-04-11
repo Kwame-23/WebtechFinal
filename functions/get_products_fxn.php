@@ -56,32 +56,13 @@ function display_productss($var){
             echo '<p>'. $products['Description']. '</p>';
             echo '<p>'. $products['StatusName']. '</p>';
     
-            if ($role_ID == 1) {
 
             echo '<form method="GET" action="../actions/edit_product_action.php" style="display: inline;">';
             echo '<input type="hidden" name="id" value="' . $products['ItemID'] . '">';
             echo '<input type="hidden" name="new_status" value="3">'; 
             echo '<button type="submit" name="submit" style="margin-right: 10px;">Reserve</button>';
             echo '</form>';
-            }
-            elseif($role_ID==2){
-            echo '<form method="GET" action="../actions/edit_product_action.php" style="display: inline;">';
-            echo '<input type="hidden" name="id" value="' . $products['ItemID'] . '">';
-            echo '<input type="hidden" name="new_status" value="2">'; 
-            echo '<button type="submit" name="submit" style="margin-right: 10px;">Sold</button>';
-            echo '</form>';
-
-            echo '<form method="GET" action="../actions/edit_product_action.php" style="display: inline;">';
-            echo '<input type="hidden" name="id" value="' . $products['ItemID'] . '">';
-            echo '<input type="hidden" name="new_status" value="1">'; 
-            echo '<button type="submit" name="submit" style="margin-right: 10px;">Available</button>';
-            echo '</form>';
-
-            echo '<form method="GET" action="../actions/delete_product_action.php" style="display: inline;">';
-            echo '<input type="hidden" name="id" value="' . $products['ItemID'] . '">';
-            echo '<button type="submit" name="submit" style="margin-right: 10px;">Delete</button>';
-            echo '</form>';
-        }
+            
         echo '</div>';
     }
     } elseif ($var['status']== 'empty') {
