@@ -18,15 +18,18 @@ function getUserRole(){
     }
 }
 
-function bounce(){
-    if(getUserRole() == 1){
-        header("Location: ../admin/admin_view.php");
-        exit();
-    }
-    else if(getUserRole() == 2){
-    header("Location: ../admin/dogs_view.php");
-    exit();
+function bounce() {
+    $current_page = basename($_SERVER['PHP_SELF']);
+    if (getUserRole() == 1) {
+        if ($current_page != 'admin_view.php') {
+            header("Location: ../admin/admin_view.php");
+            exit();
+        }
+    } elseif (getUserRole() == 2) {
+        if ($current_page != 'dogs_view.php') {
+            header("Location: ../admin/dogs_view.php");
+            exit();
+        }
     }
 }
-
 // print_r(getUserRole());
