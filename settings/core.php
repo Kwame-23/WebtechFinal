@@ -18,5 +18,13 @@ function getUserRole(){
     }
 }
 
+function bounce(){
+    if(getUserRole() == 1){
+        header("Location: ../admin/admin_view.php");
+    }
+    if(getUserRole() == 2){
+    header("Location: ../admin/dogs_view.php");
+    }
+}
 
 // print_r(getUserRole());

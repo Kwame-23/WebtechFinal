@@ -1,9 +1,3 @@
-<?php 
-include( "../settings/core.php" );
-bounce()
- ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,8 +101,8 @@ bounce()
             <p>Samoyed</p>
         </div> -->
         <?php
-
-        include("../functions/get_dogs_fxn.php");
+        
+        include("../functions/get_dogs_admin.php");
 
         ?>
     </div>
