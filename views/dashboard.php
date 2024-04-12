@@ -70,7 +70,63 @@ if (getUserRole() == 1) {
         border-radius: 5px;
     }
 
-    .feedback-button {
+ 
+.form-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+	margin-top: 15%;
+	margin-left: 30%;
+    width: 40%;
+    height: 40%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+.form-title {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+button {
+    background-color: #8f1021;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:  #b83838;
+}
+
+.feedback-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
