@@ -140,7 +140,7 @@ if (getUserRole() == 1) {
 
 <button class="feedback-button" onclick="toggleForm()">Feedback</button>
 	<div class="form-container" style="display: none;">
-        <form action="../actions/feedbackStudent_action.php" method="post">
+        <form action="../actions/feedback_action.php" method="post">
             
             <div class="form-group">
                 <label class="form-title">Kindly Provide Feedback</label><br>
