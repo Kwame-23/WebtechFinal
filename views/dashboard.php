@@ -13,7 +13,7 @@ global $conn;
 <style>
 body {
     font-family: Arial, sans-serif;
-    margin: 20%;
+    margin-bottom: 20%;
     padding: 0;
 }
 
