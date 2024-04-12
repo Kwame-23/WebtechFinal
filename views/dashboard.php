@@ -11,26 +11,28 @@ global $conn;
     <title>Picture Viewer</title>
 </head>
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin-bottom: 20%;
-    padding: 0;
-}
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden; /* Added this line */
+    }
 
-canvas {
-    display: block;
-    margin: auto;
-    max-width: 100%;
-}
+    canvas {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+        height: auto; /* Added this line */
+    }
 </style>
 <body>
 <div class="container">
