@@ -1,7 +1,4 @@
-<?php 
-include( "../settings/core.php" );
-bounce2();
- ?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +85,7 @@ bounce2();
 </header>
 
 <div class="gallery">
- 
+    
         <?php
         include("../functions/get_products_admin.php");
         ?>
