@@ -72,7 +72,7 @@ global $conn;
             <a href="../login/logout.php" class="header-link">Log Out</a>
         </div>
     </header>
-    <div class="age-range">
+    <div class="feedback">
         <h3>Age Range:</h3>
         <p>0-19</p>
     </div>
