@@ -81,6 +81,75 @@ if (getUserRole() == 1) {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+
+.feedback-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .feedback-button button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 5px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    #feedbackText {
+        width: 100%;
+        height: 150px;
+        resize: vertical;
+        margin-bottom: 10px;
+    }
+
+    #feedbackForm button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+
 </style>
 <body>
 <header>
@@ -184,5 +253,35 @@ include ("../settings/connection.php");
         }
     });
 </script>
+<script>
+        // JavaScript code for feedback button functionality
+        var feedbackBtn = document.getElementById("feedbackBtn");
+        var feedbackModal = document.getElementById("feedbackModal");
+        var closeBtn = document.getElementsByClassName("close")[0];
+        var feedbackForm = document.getElementById("feedbackForm");
+        var feedbackText = document.getElementById("feedbackText");
+
+        feedbackBtn.onclick = function() {
+            feedbackModal.style.display = "block";
+        }
+
+        closeBtn.onclick = function() {
+            feedbackModal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == feedbackModal) {
+                feedbackModal.style.display = "none";
+            }
+        }
+
+        feedbackForm.onsubmit = function(event) {
+            event.preventDefault(); // Prevent form submission
+            var userFeedback = feedbackText.value;
+            // Here you can send the feedback data to your backend or do something with it
+            console.log("User feedback:", userFeedback);
+            feedbackModal.style.display = "none"; // Close the modal after submission
+        }
+    </script>
 </body>
 </html>
