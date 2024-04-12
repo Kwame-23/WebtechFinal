@@ -79,7 +79,7 @@ bounce();
 <header>
     <div class="headie">
         <a href="../views/dashboard.php" class="header-link">Home</a>
-        <a href="../admin/products_view.php" class="header-link">Products</a>
+        <!-- <a href="../admin/products_view.php" class="header-link">Products</a> -->
     </div>
     <div class="title"><b>Dogs For Sale</b></div>
     <div class="logout">
