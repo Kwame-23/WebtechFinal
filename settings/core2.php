@@ -18,18 +18,17 @@ function getUserRole(){
     }
 }
 
-function bounce() {
+function redirect() {
     $current_page = basename($_SERVER['PHP_SELF']);
     if (getUserRole() == 1) {
-        if ($current_page != 'admin_view.php') {
-            header("Location: ../admin/admin_view.php");
+        if ($current_page != 'prod_admin.php') {
+            header("Location: ../admin/prod_admin.php");
             exit();
         }
     } elseif (getUserRole() == 2) {
-        if ($current_page != 'dogs_view.php') {
-            header("Location: ../admin/dogs_view.php");
+        if ($current_page != 'products_view.php') {
+            header("Location: ../admin/products_view.php");
             exit();
         }
     }
 }
-

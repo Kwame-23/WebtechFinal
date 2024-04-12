@@ -2,8 +2,6 @@
 include( "../settings/core.php" );
 bounce();
  ?> 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,50 +88,13 @@ bounce();
 </header>
 
 <div class="gallery">
-    <!-- <div class="image-container"> -->
-            <!-- <img src="https://cdn.britannica.com/79/232779-050-6B0411D7/German-Shepherd-dog-Alsatian.jpg" alt="German Shepherd">
-            <p>German Shepherd</p>
-        </div>
-        <div class="image-container">
-            <img src="https://www.southernliving.com/thmb/Rz-dYEhwq_82C5_Y9GLH2ZlEoYw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gettyimages-837898820-1-4deae142d4d0403dbb6cb542bfc56934.jpg" alt="Golden Retriever">
-            <p>Golden Retriever</p>
-        </div>
-        <div class="image-container">
-            <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/rockcms/2022-08/220805-border-collie-play-mn-1100-82d2f1.jpg" alt="Border Collie">
-            <p>Border Collie</p>
-        </div>
-        <div class="image-container">
-            <img src="https://b1157417.smushcdn.com/1157417/wp-content/uploads/2023/06/happy-samoyed-dog-outdoors-in-summer-field-825x550.jpg?lossy=1&strip=1&webp=0" alt="Samoyed">
-            <p>Samoyed</p>
-        </div> -->
+ 
         <?php
-
         include("../functions/get_dogs_fxn.php");
-
         ?>
     </div>
 
 
-    <!-- <button id="open-form-button" onclick="toggleForm()">Add a Dog</button>
-
-  <div id="form-container">
-    <form id="dog-form" action="../actions/add_dog_action.php" method="post" enctype="multipart/form-data">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required><br>
-     
-      
-      <label for="breed">Breed:</label><br>
-      <input type="text" id="breed" name="breed" required><br>
-      <label for="description">Description:</label><br>
-      <textarea id="description" name="description" required></textarea><br>
-      <label for="price">Price:</label><br>
-      <input type="number" id="price" name="price" min="0" step="0.01" required><br><br>
-
-      <label for="image">Image:</label>
-      <input type="file" id="image" name="image" required><br><br>
-      <input type="submit" name="submit" value="Submit">
-    </form>
-  </div> -->
 <script>
     function toggleForm() {
     var formContainer = document.getElementById("form-container");

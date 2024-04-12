@@ -1,5 +1,5 @@
 <?php 
-include( "../settings/core.php" );
+include( "../settings/core2.php" );
 redirect();
 ?> 
 <!DOCTYPE html>
@@ -102,6 +102,6 @@ redirect();
     formContainer.style.display = (formContainer.style.display === "none" || formContainer.style.display === "") ? "block" : "none";
 }
 </script>
-
+<div style="flex-basis: calc(25% - 20px); text-align:center;">
 </body>
 </html>
