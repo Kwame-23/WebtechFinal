@@ -1,7 +1,7 @@
 <?php
+session_start();
 
-include ("../config/connection.php");
-include ("../config/core.php");
+include("../settings/connection.php");
 
 
 date_default_timezone_set('UTC');
@@ -10,7 +10,7 @@ $date_today=date('Y-m-d');
 
 
 if(isset($_POST['submit'])){
-    $userID = $_SESSION['user_id'];
+    $userID= $_SESSION['user_id'];
     $feedback_content=$_POST['feedback_content'];
     
 
