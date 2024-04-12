@@ -194,8 +194,8 @@ if (getUserRole() == 1) {
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <h3>Feedback Form</h3>
-                <form id="feedbackForm">
-                    <textarea id="feedbackText" placeholder="Write your feedback here"></textarea>
+                <form id="feedbackForm" action="../actions/feedback_action.php" method="post">
+                    <textarea id="feedbackText" name="message" placeholder="Write your feedback here"></textarea>
                     <button type="submit">Submit</button>
                 </form>
             </div>
