@@ -34,6 +34,21 @@ global $conn;
         max-width: 100%;
         height: auto; /* Added this line */
     }
+
+    .breed-list {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .breed-item {
+        padding: 5px 10px;
+        margin-bottom: 5px;
+        background-color: #fff;
+        border-radius: 5px;
+    }
 </style>
 <body>
 <header>
@@ -53,7 +68,21 @@ global $conn;
     <canvas id="pieChart"></canvas>
 </div>
 
+<div class="breed-list">
+    <h2>Breeds Available</h2>
+    <?php
+    $sql = "SELECT DISTINCT Breed FROM Dogs";
+    $result = $conn->query($sql);
 
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<div class='breed-item'>" . $row["Breed"] . "</div>";
+        }
+    } else {
+        echo "<div class='breed-item'>No breeds available</div>";
+    }
+    ?>
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
