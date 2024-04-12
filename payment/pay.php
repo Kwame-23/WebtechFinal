@@ -1,5 +1,9 @@
 <?php
   require_once "../functions/get_price.php";
+
+  if (isset($_GET['id'])) {
+    $dogID = $_GET['id'];
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
