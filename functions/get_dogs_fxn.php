@@ -51,8 +51,9 @@ function display_dogs($var){
 
             echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
             echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
+            echo '<input type="hidden" name="id" value="' . $dog['Price'] . '">';
             echo '<input type="hidden" name="new_status" value="3">'; 
-            echo '<a href="../payment/pay.php" style="text-decoration: none;"><button type="submit" name="submit" style="margin-right: 10px;">Reserve</button></a>';
+            echo '<a href="../payment/pay.php?id=' . $dog['DogID'] . '" style="text-decoration: none;"><button type="submit" name="submit" style="margin-right: 10px;">Reserve</button></a>';
             echo '</form>';
 
          
