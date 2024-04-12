@@ -54,7 +54,7 @@ global $conn;
     float: right;
     margin-right: 20px; /* Adjust this value as needed */
     margin-top: 80px; /* Adjust this value as needed */
-    max-width: 300px;
+    max-width: 600px;
     padding: 5px 10px;
     background-color: #f9f9f9;
     border-radius: 5px;
