@@ -9,7 +9,7 @@ function get_all_dogs(){
      JOIN AvailabilityStatuses as s ON d.StatusID = s.StatusID;
     ";
 
-    $result  = mysqli_query($conn, $sql);
+    $result  = mysqli_query($conn, $sql); 
 
     if (!$result){
         return array(
@@ -52,7 +52,7 @@ function display_dogs($var){
             echo '<form method="GET" action="../actions/edit_dog_buy_action.php" style="display: inline;">';
             echo '<input type="hidden" name="id" value="' . $dog['DogID'] . '">';
             echo '<input type="hidden" name="new_status" value="3">'; 
-            echo '<button type="submit" name="submit" style="margin-right: 10px;">Reserve</button>';
+            echo '<a href="../payment/pay.php style="text-decoration: none;"><button type="submit" name="submit" style="margin-right: 10px;">Reserve</button></a>';
             echo '</form>';
 
          
