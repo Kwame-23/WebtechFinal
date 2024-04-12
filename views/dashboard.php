@@ -70,63 +70,7 @@ if (getUserRole() == 1) {
         border-radius: 5px;
     }
 
- 
-.form-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-	margin-top: 15%;
-	margin-left: 30%;
-    width: 40%;
-    height: 40%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    z-index: 1000; /* Ensure it appears above other elements */
-}
-
-
-.form-group {
-    margin-bottom: 20px;
-}
-.form-title {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-select,
-textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-
-button {
-    background-color: #8f1021;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color:  #b83838;
-}
-
-.feedback-button {
+    .feedback-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -140,6 +84,19 @@ button:hover {
 
 .feedback-button:hover {
     background-color:  #b83838;
+}
+
+.form-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it's above other elements */
 }
 
 
@@ -197,11 +154,25 @@ button:hover {
     </div>
 
 <script>
-    function toggleForm() {
+   function toggleForm() {
     const formContainer = document.querySelector('.form-container');
     const feedbackButton = document.querySelector('.feedback-button');
+    const body = document.querySelector('body'); // Get the body element
+
+    // Toggle the form display
     formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
     feedbackButton.textContent = formContainer.style.display === 'none' ? 'Feedback' : 'Close';
+
+    // Center the form vertically if it's visible
+    if (formContainer.style.display === 'block') {
+        const windowHeight = window.innerHeight;
+        const formHeight = formContainer.clientHeight;
+        const topPosition = (windowHeight - formHeight) / 2;
+        formContainer.style.top = topPosition + 'px';
+        body.style.overflow = 'hidden'; // Disable scrolling when the form is open
+    } else {
+        body.style.overflow = ''; // Re-enable scrolling when the form is closed
+    }
 }
 </script>
 
