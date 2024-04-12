@@ -53,7 +53,7 @@ global $conn;
     .feedback {
         position: absolute;
         top: 80px;
-        margin-left:70%;
+        margin-left:50%;
         right: 20px;
         padding: 5px 10px;
         background-color: #f9f9f9;
