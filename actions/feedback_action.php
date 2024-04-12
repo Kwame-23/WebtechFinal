@@ -1,25 +1,33 @@
 <?php
-include("../settings/connection.php"); 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $feedbackText = htmlspecialchars($_POST["message"]);
-    $userID= $_SESSION['user_id'];
+include ("../config/connection.php");
+include ("../config/core.php");
 
-    $sql = "INSERT INTO Reviews (UserID, ReviewText) VALUES (?, ?)";
-    $stmt = $conn->prepare($sql);
 
-    $stmt->bind_param("is", $userID, $feedbackText);
+date_default_timezone_set('UTC');
+$date_today=date('Y-m-d');
+
+
+
+if(isset($_POST['submit'])){
+    $userID = $_SESSION['user_id'];
+    $feedback_content=$_POST['feedback_content'];
+    
+
+
+    $sql = "INSERT into Feedback(UserID, ReviewText, Timestamp) values(?, ?, ?)";
+    $stmt = $conn->prepare($sql); 
+    $stmt->bind_param('iss', $userID, $feedback_content,  $date_today);  
 
     if($stmt->execute()){
-        header("Location:../views/dashboard.php?msg=Feedback Recorded");
+        header("Location: ../templates/dashboard.php");
+        echo 'Sent';
     }
     else{
-        header("Location:../views/dashboard.php?msg=Feedback Npt Recorded");
-
+        echo "Error" . $conn->error;
+        exit;
     }
-    $stmt->close();
+    
 
-     
-    $conn->close();
+
 }
-?>
