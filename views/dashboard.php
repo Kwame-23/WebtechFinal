@@ -20,7 +20,9 @@
             <a href="../login/logout.php" class="header-link">Log Out</a>
         </div>
     </header>
-
-    echo "for stats";
+        <?php
+        include("../actions/stats.php");
+        displayDogStatusPieChart()
+        ?>
 </body>
 </html>
