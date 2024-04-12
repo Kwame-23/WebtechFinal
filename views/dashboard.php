@@ -17,7 +17,7 @@ global $conn;
         padding: 0;
     }
 
-   .container {
+    .container {
         max-width: 800px;
         max-height: 800px;
 
@@ -46,28 +46,9 @@ global $conn;
             <a href="../login/logout.php" class="header-link">Log Out</a>
         </div>
     </header>
-<div style="display: flex;">
-    <div style="margin-right: 20px;">
-        <!-- List the available breeds here -->
-        <h3>Available Breeds</h3>
-        <ul>
-            <?php
-            // Fetch and loop through the available breeds
-            $sql = "SELECT BreedName FROM Dogs GROUP BY BreedName";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<li style=\"list-style-type: '🐾';\">". $row['BreedName']. "</li>";
-                }
-            }
-         ?>
-        </ul>
-    </div>
-    <div class="container">
-        <h1>Pie Chart - Dog Availability</h1>
-        <canvas id="pieChart"></canvas>
-    </div>
+<div class="container">
+    <h1>Pie Chart - Dog Availability</h1>
+    <canvas id="pieChart"></canvas>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -91,16 +72,16 @@ include ("../settings/connection.php");
 
     $labels = json_encode($labels);
     $data = json_encode($data);
-   ?>
+    ?>
 
     // JavaScript code to generate the pie chart using Chart.js
     var ctx = document.getElementById('pieChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: <?php echo $labels;?>,
+            labels: <?php echo $labels; ?>,
             datasets: [{
-                data: <?php echo $data;?>,
+                data: <?php echo $data; ?>,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.7)',
                     'rgba(54, 162, 235, 0.7)',
