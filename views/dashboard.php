@@ -49,6 +49,16 @@ global $conn;
         background-color: #fff;
         border-radius: 5px;
     }
+
+    .feedback {
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        padding: 5px 10px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 </style>
 <body>
 <header>
@@ -61,10 +71,13 @@ global $conn;
             <a href="../login/logout.php" class="header-link">Log Out</a>
         </div>
     </header>
-
+    <div class="age-range">
+        <h3>Age Range:</h3>
+        <p>0-19</p>
+    </div>
     
 <div class="container">
-    <h1>Pie Chart - Dog Availability</h1>
+    <h1>Dog Availability</h1>
     <canvas id="pieChart"></canvas>
 </div>
 
