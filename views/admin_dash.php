@@ -1,27 +1,7 @@
 <?php
 include ("../settings/connection.php");
-include ("../settings/core.php");
 global $conn;
-
-
-
-$current_page = basename($_SERVER['PHP_SELF']);
-if (getUserRole() == 1) {
-    if ($current_page != 'admin_dash.php') {
-        header("Location: ../views/admin_dash.php");
-        exit();
-    }
-} elseif (getUserRole() == 2) {
-    if ($current_page != 'dashboard.php') {
-        header("Location: ../views/dashboard.php");
-        exit();
-    }
-}
-
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
