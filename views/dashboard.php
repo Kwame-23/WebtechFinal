@@ -19,7 +19,7 @@ global $conn;
 
     .container {
         max-width: 800px;
-        max-height: 800px;
+        max-height: 650px;
 
         padding: 20px;
         background-color: #f9f9f9;
