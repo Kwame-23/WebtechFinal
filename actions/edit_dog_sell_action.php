@@ -11,19 +11,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('ii', $new_status_id, $dog_id);
         if ($stmt->execute()) {
-            if(getUserRole()==2){
-                header("Location: ../payment/pay.php?msg=success");
-                exit();
-            }else{
+            // if(getUserRole()==)
 
             header("Location: ../admin/dogs_view.php?msg=success");
             exit;
-        }
-    }
-         
-    else {
-        header("Location: ../admin/dogs_view.php?msg=could not update");
-        exit;
+        } else {
+            header("Location: ../admin/dogs_view.php?msg=could not update");
+            exit;
         }
     }
 }
