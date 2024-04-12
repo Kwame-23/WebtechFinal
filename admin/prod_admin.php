@@ -1,3 +1,7 @@
+<?php 
+include( "../settings/core.php" );
+redirect();
+?> 
 
 <!DOCTYPE html>
 <html lang="en">

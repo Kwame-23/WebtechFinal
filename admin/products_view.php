@@ -1,4 +1,7 @@
-
+<?php 
+include( "../settings/core.php" );
+redirect();
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,29 +90,12 @@
 <div class="gallery">
     
         <?php
-        include("../functions/get_products_admin.php");
+        include("../functions/get_products_fxn.php");
         ?>
     </div>
 
 
-    <button id="open-form-button" onclick="toggleForm()">Add Product</button>
 
-  <div id="form-container">
-    <form id="dog-form" action="../actions/add_product_action.php" method="post" enctype="multipart/form-data">
-      <label for="name">Product Name:</label><br>
-      <input type="text" id="name" name="name" required><br>
-      <label for="category">Category:</label><br>
-      <input type="text" id="category" name="category" required><br>
-      <label for="price">Price:</label><br>
-      <input type="number" id="price" name="price" min="0" step="0.01" required><br><br>
-      <label for="description">Description:</label><br>
-      <textarea id="description" name="description" required></textarea><br>
-      
-      <label for="image">Image:</label>
-      <input type="file" id="image" name="image" required><br><br>
-      <input type="submit" name="submit" value="Submit">
-    </form>
-  </div>
 <script>
     function toggleForm() {
     var formContainer = document.getElementById("form-container");

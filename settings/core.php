@@ -33,14 +33,16 @@ function bounce() {
     }
 }
 
-function bounce2() {
+function redirect() {
     $current_page = basename($_SERVER['PHP_SELF']);
-    if (getUserRole() == 1) {
+    $user_role = getUserRole();
+
+    if ($user_role == 1) {
         if ($current_page != 'prod_admin.php') {
             header("Location: ../admin/prod_admin.php");
             exit();
         }
-    } elseif (getUserRole() == 2) {
+    } elseif ($user_role == 2) {
         if ($current_page != 'products_view.php') {
             header("Location: ../admin/products_view.php");
             exit();
