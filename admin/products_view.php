@@ -87,7 +87,7 @@
 <div class="gallery">
     
         <?php
-        include("../functions/get_products_fxn.php");
+        include("../functions/get_products_admin.php");
         ?>
     </div>
 
