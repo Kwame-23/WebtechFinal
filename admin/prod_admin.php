@@ -106,7 +106,7 @@ bounce2();
             <p>Samoyed</p>
         </div> -->
         <?php
-        include("../functions/get_products_fxn.php");
+        include("../functions/get_products_admin.php");
         ?>
     </div>
 

@@ -1,3 +1,8 @@
+<?php 
+include( "../settings/core.php" );
+bounce();
+ ?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

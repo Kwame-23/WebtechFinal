@@ -114,7 +114,7 @@ bounce();
     </div>
 
 
-    <button id="open-form-button" onclick="toggleForm()">Add a Dog</button>
+    <!-- <button id="open-form-button" onclick="toggleForm()">Add a Dog</button>
 
   <div id="form-container">
     <form id="dog-form" action="../actions/add_dog_action.php" method="post" enctype="multipart/form-data">
@@ -133,7 +133,7 @@ bounce();
       <input type="file" id="image" name="image" required><br><br>
       <input type="submit" name="submit" value="Submit">
     </form>
-  </div>
+  </div> -->
 <script>
     function toggleForm() {
     var formContainer = document.getElementById("form-container");
