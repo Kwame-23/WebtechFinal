@@ -28,7 +28,7 @@ if (getUserRole() == 1) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/dash.css">
-    <title>Picture Viewer</title>
+    <title>Buyer's Dashboard</title>
 </head>
 <style>
     body {
@@ -88,7 +88,7 @@ if (getUserRole() == 1) {
         <a href="../admin/dogs_view.php" class="header-link">Dogs</a>
         <!-- <a href="../admin/products_view.php" class="header-link">Products</a> -->
         </div>
-        <div class="title"><b>Picture Viewer</b></div>
+        <div class="title"><b>Dashboard</b></div>
         <div class="logout">
             <a href="../login/logout.php" class="header-link">Log Out</a>
         </div>
@@ -118,6 +118,20 @@ if (getUserRole() == 1) {
     }
     ?>
 </div>
+
+<div class="feedback-button">
+        <button id="feedbackBtn">Feedback</button>
+        <div id="feedbackModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Feedback Form</h3>
+                <form id="feedbackForm">
+                    <textarea id="feedbackText" placeholder="Write your feedback here"></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

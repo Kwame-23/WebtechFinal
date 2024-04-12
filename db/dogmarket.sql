@@ -39,13 +39,9 @@ CREATE TABLE Dogs (
 CREATE TABLE Reviews (
     ReviewID INT AUTO_INCREMENT PRIMARY KEY,
     UserID INT,
-    DogID INT,
-    Rating DECIMAL(2, 1), 
     ReviewText TEXT,
     Timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (UserID) REFERENCES Users(user_id),
-    FOREIGN KEY (DogID) REFERENCES Dogs(DogID),
-    CHECK (Rating >= 0 AND Rating <= 10) 
+    FOREIGN KEY (UserID) REFERENCES Users(user_id)
 );
 
 CREATE TABLE Items (
