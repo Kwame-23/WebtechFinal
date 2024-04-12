@@ -19,7 +19,7 @@ global $conn;
 
     .container {
         max-width: 800px;
-        max-height: 650px;
+        max-height: 580px;
 
         padding: 20px;
         background-color: #f9f9f9;
@@ -54,6 +54,7 @@ global $conn;
     float: right;
     margin-right: 20px; /* Adjust this value as needed */
     margin-top: 80px; /* Adjust this value as needed */
+    width: 400px;;
     max-width: 600px;
     padding: 5px 10px;
     background-color: #f9f9f9;
