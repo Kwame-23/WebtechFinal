@@ -22,7 +22,7 @@
   </div>
   <div class="form-group">
     <label for="amount">Amount</label>
-    <input type="number" id="amount" name="amount" value="<?= getPrice($dogID)?>" min="0" step="0.01" required><br><br>
+    <input type="number" id="amount" name="amount" value="<?= getPrice($dogID)?>" min="0" step="0.01" required readonly><br><br>
   </div>
   <div class="form-group">
     <label for="first-name">First Name</label>
