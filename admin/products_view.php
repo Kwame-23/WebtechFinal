@@ -1,7 +1,4 @@
-<?php 
-include( "../settings/core.php" );
-bounce2();
- ?> 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
