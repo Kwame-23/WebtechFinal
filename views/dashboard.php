@@ -70,35 +70,7 @@ if (getUserRole() == 1) {
         border-radius: 5px;
     }
 
-    .feedback-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color:  #8f1021;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.feedback-button:hover {
-    background-color:  #b83838;
-}
-
-.form-container {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Ensure it's above other elements */
-}
-
+ 
 
 </style>
 <body>
@@ -137,47 +109,6 @@ if (getUserRole() == 1) {
     }
     ?>
 </div>
-
-<button class="feedback-button" onclick="toggleForm()">Feedback</button>
-	<div class="form-container" style="display: none;">
-        <form action="../actions/feedback_action.php" method="post">
-            
-            <div class="form-group">
-                <label class="form-title">Kindly Provide Feedback</label><br>
-                <label for="feedback_content">Comments:</label>
-                <textarea id="feedback_content" name="feedback_content" rows="4" cols="50"></textarea>
-               
-            </div>
-            
-            <button type="submit" name="submit">Submit</button>
-        </form>
-    </div>
-
-<script>
-   function toggleForm() {
-    const formContainer = document.querySelector('.form-container');
-    const feedbackButton = document.querySelector('.feedback-button');
-    const body = document.querySelector('body'); // Get the body element
-
-    // Toggle the form display
-    formContainer.style.display = formContainer.style.display === 'none' ? 'block' : 'none';
-    feedbackButton.textContent = formContainer.style.display === 'none' ? 'Feedback' : 'Close';
-
-    // Center the form vertically if it's visible
-    if (formContainer.style.display === 'block') {
-        const windowHeight = window.innerHeight;
-        const formHeight = formContainer.clientHeight;
-        const topPosition = (windowHeight - formHeight) / 2;
-        formContainer.style.top = topPosition + 'px';
-        body.style.overflow = 'hidden'; // Disable scrolling when the form is open
-    } else {
-        body.style.overflow = ''; // Re-enable scrolling when the form is closed
-    }
-}
-</script>
-
-
-
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
