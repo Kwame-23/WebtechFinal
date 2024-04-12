@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css"href="../css/pay.css">
+    <link rel="stylesheet" type="text/css" href="../css/pay.css">
     <title>Document</title>
 </head>
 <body>
@@ -33,15 +33,15 @@
     <input type="text" id="last-name" />
   </div>
   <div class="form-submit">
-    <button type="submit" onclick="payWithPaystack()"> Pay </button>
+    <button type="button" id="payButton">Pay</button>
   </div>
 </form>
 
 <script src="https://js.paystack.co/v1/inline.js"></script>
       
 <script>
-  var paymentForm = document.getElementById('paymentForm');
-paymentForm.addEventListener('submit', payWithPaystack, false);
+document.getElementById('payButton').addEventListener('click', payWithPaystack);
+
 function payWithPaystack() {
   var handler = PaystackPop.setup({
     key: 'pk_test_9d671936a848ef3f08f439a186af60d1b69a266d', 
