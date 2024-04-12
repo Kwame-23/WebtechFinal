@@ -36,6 +36,16 @@ global $conn;
     }
 </style>
 <body>
+<header>
+        <div class="headie">
+        <a href="../admin/dogs_view.php" class="header-link">Dogs</a>
+        <a href="../admin/products_view.php" class="header-link">Products</a>
+        </div>
+        <div class="title"><b>Picture Viewer</b></div>
+        <div class="logout">
+            <a href="../login/logout.php" class="header-link">Log Out</a>
+        </div>
+    </header>
 <div class="container">
     <h1>Pie Chart - Dog Availability</h1>
     <canvas id="pieChart"></canvas>
