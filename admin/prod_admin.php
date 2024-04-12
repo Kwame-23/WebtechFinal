@@ -1,8 +1,3 @@
-<?php 
-include( "../settings/core.php" );
-bounce2();
- ?> 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,7 +101,7 @@ bounce2();
             <p>Samoyed</p>
         </div> -->
         <?php
-        include("../functions/get_products_admin.php");
+        include("../functions/get_products_fxn.php");
         ?>
     </div>
 
