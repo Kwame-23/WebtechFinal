@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $stmt->bind_param('ii', $new_status_id, $dog_id);
         if ($stmt->execute()) {
             if(getUserRole()==2){
-                header("Location: ../payment/pay.php?msg=success");
+                header("Location: ../payment/pay.php?id=$dog_id");
                 exit();
             }else{
 
