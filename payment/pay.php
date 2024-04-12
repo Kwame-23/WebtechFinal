@@ -51,7 +51,7 @@ function payWithPaystack() {
     ref: '', 
     callback: function(response) {
       var reference = response.reference;
-      window.href.location = '../views/dashboard.php';
+      window.location.href = '../views/dashboard.php';
       // Make an AJAX call to your server with the reference to verify the transaction
     },
     onClose: function() {
