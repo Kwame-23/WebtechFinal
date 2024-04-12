@@ -84,10 +84,7 @@ if (getUserRole() == 1) {
             <a href="../login/logout.php" class="header-link">Log Out</a>
         </div>
     </header>
-    <div class="feedback">
-        <h3>Feedback:</h3>
-        <p>0-19</p>
-    </div>
+
     
 <div class="container">
     <h1>Dog Availability</h1>

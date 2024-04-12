@@ -50,17 +50,7 @@ global $conn;
         border-radius: 5px;
     }
 
-    .feedback {
-    float: right;
-    margin-right: 20px; /* Adjust this value as needed */
-    margin-top: 80px; /* Adjust this value as needed */
-    width: 400px;;
-    max-width: 600px;
-    padding: 5px 10px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+
 </style>
 <body>
 <header>
@@ -73,10 +63,7 @@ global $conn;
             <a href="../login/logout.php" class="header-link">Log Out</a>
         </div>
     </header>
-    <div class="feedback">
-        <h3>Feedback:</h3>
-        <p>0-19</p>
-    </div>
+
     
 <div class="container">
     <h1>Dog Availability</h1>
