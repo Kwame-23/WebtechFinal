@@ -39,7 +39,7 @@ global $conn;
 <header>
         <div class="headie">
         <a href="../admin/dogs_view.php" class="header-link">Dogs</a>
-        <a href="../admin/products_view.php" class="header-link">Products</a>
+        <!-- <a href="../admin/products_view.php" class="header-link">Products</a> -->
         </div>
         <div class="title"><b>Picture Viewer</b></div>
         <div class="logout">
