@@ -54,6 +54,7 @@ global $conn;
         position: absolute;
         top: 80px;
         margin-left:50%;
+        max-width: 300px;
         right: 20px;
         padding: 5px 10px;
         background-color: #f9f9f9;
